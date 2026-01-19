@@ -1,90 +1,76 @@
-Laboratory Activity #5 – Receiving Serial Connection Using Arduino from Python
-
-
-Description
-
----------------------------------------------------------------------
-
-* This laboratory activity demonstrates serial communication from a Python application to an Arduino microcontroller, where Python sends commands that control the Arduino’s LED outputs in real time.
-* The setup implements an interactive system that lets users toggle individual LEDs, switch all LEDs on or off, and receive textual feedback from the Arduino, emphasizing Python–hardware integration and basic serial communication concepts.
-​
-
----------------------------------------------------------------------
-
-
-Objectives
-
----------------------------------------------------------------------
-
-* Understand and implement Arduino Serial communication
-* Utilize Python as a tool for sending commands to Arduino
-* Create an interactive system to control LEDs via serial commands
-
----------------------------------------------------------------------
-
-Concepts Applied
-
----------------------------------------------------------------------
-
-* Serial communication using Serial.begin(), Serial.available(), and Serial.read()
-* Case-insensitive input handling
-* LED control using digital output pins
-* Python serial communication using the pyserial library
-* Menu-driven, non-terminating Python script
-* Error handling for unknown commands
-* Modular Arduino code using a header file for reusable LED functions
-
----------------------------------------------------------------------
-
-System Behavior
-
----------------------------------------------------------------------
-* The system uses an Arduino connected to three LEDs (red, green, and blue), each controlled by single-character commands sent from Python over the serial port.
-* The Arduino interprets incoming characters and executes the corresponding LED actions while sending status messages back (for example, RED ON, ALL OFF, or ERR: UNKNOWN COMMAND).
-​
-
-Communication (Python → Arduino)
-
-* R / r → Toggle Red LED ON/OFF
-
-* G / g → Toggle Green LED ON/OFF
-
-* B / b → Toggle Blue LED ON/OFF
-
-* A / a → Turn all LEDs ON
-
-* O / o → Turn all LEDs OFF
-
-* X / x → Exit the Python application
-
-* Any other character → Returns an error message such as ERR: UNKNOWN COMMAND
-
-This interaction demonstrates real-time LED control with immediate feedback from the Arduino for every Python command.
-​
+**Laboratory Activity #5 – Receiving Serial Connection Using Arduino from Python**  
 
 
 
----------------------------------------------------------------------
+***
 
-Team Members
+### I. Description  
+This laboratory activity demonstrates **serial communication** between a **Python application** and an **Arduino microcontroller**, where Python sends commands that control the Arduino’s LED outputs in real time. The setup creates an **interactive control system** allowing the user to toggle individual LEDs, switch all LEDs ON or OFF, and receive **textual feedback** from the Arduino. This experiment emphasizes **Python–hardware integration**, real-time control, and bidirectional data exchange using basic serial communication principles.
 
----------------------------------------------------------------------
+***
 
-Team Leader:Bonganay, Lhojen Faith
+### II. Objectives  
+1. Understand and implement Arduino Serial communication.  
+2. Utilize **Python** as a tool for sending commands to Arduino.  
+3. Develop an **interactive control system** for LED management via serial commands.  
 
-Members:
+***
 
-Atas, Mikkos Cepie
+### III. Concepts Applied  
+- Serial communication using `Serial.begin()`, `Serial.available()`, and `Serial.read()`  
+- Case-insensitive input handling for command flexibility  
+- LED control via **digital output pins**  
+- Python serial communication using the **PySerial library**  
+- Menu-driven, continuously running Python script for user interaction  
+- Error handling for unrecognized commands  
+- Modular Arduino programming with **header file functions** for reusable LED control logic  
 
-Dela Cerna, Gabrielle
+***
 
-Gito, Rhic Emmanuel
+### IV. System Behavior  
+- **Hardware setup:**  
+  - Arduino connected to **three LEDs** (Red, Green, and Blue).  
+  - Communication established through a **serial port** with commands received from a Python script.  
 
-Ocubillo, Gypsy Brygx
+- **Behavior overview:**  
+  1. The Python program sends single-character commands to the Arduino.  
+  2. The Arduino interprets each command and performs the correct LED action.  
+  3. The Arduino responds with textual feedback confirming each operation (e.g., `RED ON`, `ALL OFF`, `ERR: UNKNOWN COMMAND`).  
 
-Serrona, John Mark
+- **Command mapping (Python → Arduino):**  
+  | Command | Function | Description |
+  |:--------:|:----------|:-------------|
+  | R / r | Toggle Red LED | Switches the red LED ON/OFF |
+  | G / g | Toggle Green LED | Switches the green LED ON/OFF |
+  | B / b | Toggle Blue LED | Switches the blue LED ON/OFF |
+  | A / a | All LEDs ON | Activates all LEDs simultaneously |
+  | O / o | All LEDs OFF | Turns all LEDs OFF |
+  | X / x | Exit | Terminates the Python application |
+  | Other | Error | Displays “ERR: UNKNOWN COMMAND” |
 
-Villamor, Lester John
+- **Interactive feedback:**  
+  Every command issued through the Python interface immediately triggers a hardware response on the Arduino and provides printed confirmation in both the Serial Monitor and Python terminal.
 
----------------------------------------------------------------------
+***
 
+### V. Circuit Diagram and Wiring  
+- **Arduino Uno connections:**  
+  - **Red LED:** Digital Pin **8** (through 220Ω resistor → GND)  
+  - **Green LED:** Digital Pin **9** (through 220Ω resistor → GND)  
+  - **Blue LED:** Digital Pin **10** (through 220Ω resistor → GND)  
+- **Power supply:** USB connection (enabling Serial communication with Python)  
+- **Control interface:** Python script communicating via **COM port** using **PySerial**
+
+***
+
+### VI. Team Members  
+- **Team Leader:** Bonganay, Lhojen Faith  
+- **Members:**  
+  - Atas, Mikkos Cepie  
+  - Dela Cerna, Gabrielle  
+  - Gito, Rhic Emmanuel  
+  - Ocubillo, Gypsy Brygx  
+  - Serrona, John Mark  
+  - Villamor, Lester John  
+
+***
