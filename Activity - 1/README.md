@@ -1,70 +1,56 @@
-Laboratory Activity #1 – Working with Digital Signals
+**Laboratory Activity #1 – Working with Digital Signals**  
 
 
-Description
+***
 
----------------------------------------------------------------------
+### I. Description  
+This laboratory activity demonstrates **digital output control using Arduino**, focusing on the manipulation of digital signals. Five LEDs are used to create a running light effect, sequentially illuminating in a forward and reverse pattern. The program visualizes **HIGH/LOW transitions** (5V/0V) with one-second delays, providing an introductory understanding of digital signal timing and control in IoT systems.
 
-* This laboratory activity demonstrates Arduino digital output 
-control for IoT systems, focusing on digital signal manipulation. 
-Five LEDs create a running light effect, sequentially lighting up 
-from pins 8→12 then turning off 12→8, visualizing HIGH/LOW state 
-transitions with
-1-second delays.
+***
 
----------------------------------------------------------------------
+### II. Objectives  
+1. Review Arduino as a device for implementing IoT systems.  
+2. Discuss digital signals and their application in Arduino circuits.  
 
+***
 
-Objectives
+### III. Concepts Applied  
+- Digital signal states: **HIGH = 5V**, **LOW = 0V**  
+- **pinMode(pin, OUTPUT)** – Configures a pin as an output  
+- **digitalWrite(pin, HIGH/LOW)** – Sets the output state of a pin  
+- **delay(ms)** – Introduces timing delays for synchronization  
+- Sequential programming for chase effect logic  
+- Breadboard prototyping with **current-limiting resistors**
 
----------------------------------------------------------------------
+***
 
-* Review Arduino as a device for IoT systems implementation
-* Discuss digital signals and its implementation in a Arduino circuit.
+### IV. System Behavior  
+- **Pins used:** 8, 9, 10, 11, and 12  
+- **Forward sequence:**  
+  LEDs turn ON sequentially → Pin 8 → 9 → 10 → 11 → 12 (1 second per transition)  
+- **Reverse sequence:**  
+  LEDs turn OFF sequentially → Pin 12 → 11 → 10 → 9 → 8 (1 second per transition)  
+- **Cycle duration:** 10 seconds (continuous loop)  
+- **Visual effect:** A left-to-right “running light” followed by a right-to-left extinguish pattern.  
 
+***
 
----------------------------------------------------------------------
+### V. Circuit Diagram and Wiring  
+- **Arduino Uno** digital pins connected to **breadboard LEDs**.  
+- **Wiring color scheme:**  
+  - Pin 8 → Orange wire  
+  - Pin 9 → Yellow wire  
+  - Pin 10 → Green wire  
+  - Pin 11 → Blue wire  
+  - Pin 12 → Red wire  
+- Each LED connects through a **220Ω resistor** to **GND**.  
 
-Concepts Applied
+***
 
----------------------------------------------------------------------
+### VI. Team Members  
+- **Team Leader:** Serrona, John Mark L.  
+- **Members:**  
+  - Atas, Mikkos Cepie — *Score: 100*  
+  - Gito, Rhic Emmanuel — *Score: 99*  
 
-* Digital signal states (HIGH = 5V, LOW = 0V)
-
-* pinMode(pin, OUTPUT) configuration
-
-* digitalWrite(pin, HIGH/LOW) state control
-
-* delay(ms) for timing synchronization
-
-* Sequential programming logic for chase effects
-
-* Breadboard prototyping with current-limiting resistors
-  
----------------------------------------------------------------------
-
-System Behavior
-
----------------------------------------------------------------------
-* Five LEDs on digital pins 8, 9, 10, 11, 12 execute:
-* Forward sequence: Pin 8 HIGH → 9 HIGH → 10 HIGH → 11 HIGH → 12 HIGH (1s each)
-* Reverse sequence: Pin 8 LOW → 9 LOW → 10 LOW → 11 LOW → 12 LOW (1s each)
-* Continuous loop: 10-second full cycle repeats indefinitely
-* Visual effect: Left-to-right "running light" chase, then right-to-left extinguish.
-* Wiring: Arduino Uno pins → breadboard LEDs (colored wires: orange=8, yellow=9, green=10, blue=11, red=12) → 220Ω resistors → GND.
-
----------------------------------------------------------------------
-
-Team Members
-
----------------------------------------------------------------------
-
-Team Leader: Serrona, John Mark L.
-
-Members:
-
-Atas, Mikkos Cepie (Score: 100)
-
-Gito, Rhic Emmanuel (Score: 99)
-
----------------------------------------------------------------------
+***
