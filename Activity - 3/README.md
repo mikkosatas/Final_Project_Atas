@@ -1,73 +1,62 @@
-Laboratory Activity #3 – Working with Sensors
+**Laboratory Activity #3 – Working with Sensors**  
 
 
-Description
+***
 
----------------------------------------------------------------------
+### I. Description  
+This laboratory activity introduces the use of **sensor components** commonly utilized in **IoT applications** and demonstrates how multiple sensors can be integrated into a single **Arduino-based circuit**. The experiment implements a simple **fire detection system** using a **thermistor** (for temperature sensing) and a **photoresistor** (for light intensity measurement). By combining environmental data from these two sensors, the system shows how **real-world analog signals** can be processed in Arduino to trigger hardware-based alert mechanisms.
 
-* This laboratory activity introduces the use of sensor components commonly applied in IoT systems and demonstrates how multiple sensors can be integrated into a single Arduino-based circuit, furthermore the activity implements a simple fire detection system using a thermistor and a photoresistor. By combining temperature and light intensity readings, the system shows how environmental data can be processed to trigger hardware-based alerts.
+***
 
----------------------------------------------------------------------
+### II. Objectives  
+1. Familiarize students with basic sensor components used in IoT systems.  
+2. Integrate multiple sensor components within an Arduino circuit.  
+3. Design and implement a simple fire detection system.  
 
+***
 
-Objectives
+### III. Concepts Applied  
+- Analog sensor data acquisition  
+- Thermistor temperature calculation using the **Beta parameter equation**  
+- Light intensity sensing using a **photoresistor (LDR)**  
+- Threshold-based decision logic  
+- Function modularization for organized sensor data handling  
+- Use of `#define` for pin configuration  
+- Use of `const` variables for fixed threshold values  
+- Digital output control for alert signaling  
 
----------------------------------------------------------------------
+***
 
-*  Familiarize students with the basic sensor components that can be used in IoT
-*   Integrate these sensor components in an Arduino circuit
-*   Create a simple implementation of a fire sensor
----------------------------------------------------------------------
+### IV. System Behavior  
+- **Sensors used:**  
+  - **Thermistor** – Connected to **Analog Pin A0** to measure temperature in °C.  
+  - **Photoresistor (LDR)** – Connected to **Analog Pin A2** to measure light intensity.  
 
-Concepts Applied
+- **Program logic:**  
+  1. Each sensor reading is processed using separate functions for clear and modular code structure.  
+  2. The system continuously reads both sensor values.  
+  3. When both temperature and light intensity exceed their predefined threshold values, a fire condition is assumed.  
 
----------------------------------------------------------------------
+- **Alert mechanism:**  
+  - An **LED connected to Digital Pin 12** rapidly blinks to signal a potential fire event.  
+  - This demonstrates how multiple sensor inputs can be evaluated together to determine system responses in real time.  
 
-* Analog sensor data acquisition.
+***
 
-* Thermistor temperature calculation using the Beta parameter equation.
+### V. Circuit Diagram and Wiring  
+- **Arduino Uno** connects to:  
+  - **Thermistor** → Analog Pin **A0**  
+  - **Photoresistor (LDR)** → Analog Pin **A2**  
+  - **LED Indicator** → Digital Pin **12** (via 220Ω resistor → GND)  
+- **Power source:** USB or external 5V supply  
+- Circuit designed for modular testing and sensor reading validation  
 
-* Light intensity sensing with a photoresistor.
+***
 
-* Threshold-based decision logic.
+### VI. Team Members  
+- **Team Leader:** Serrona, John Mark  
+- **Members:**  
+  - Atas, Mikkos Cepie — *Score: 99*  
+  - Gito, Rhic Emmanuel — *Score: 100*  
 
-* Function modularization for sensor readings.
-
-* Use of #define for pin configuration.
-
-* Use of const for fixed threshold values.
-
-* Digital output control for alert signaling.
-
-
-  
----------------------------------------------------------------------
-
-System Behavior
-
----------------------------------------------------------------------
-* The system uses two sensors: A thermistor connected to analog pin A0 to measure temperature in Celsius and a photoresistor connected to analog pin A2 to measure light intensity.
-
-* Sensor readings are processed through separate functions to keep the code clear and modular.
-
-* When both the temperature and brightness exceed their defined threshold values, an alert mechanism is activated.
-
-* An LED connected to digital pin 12 rapidly blinks to indicate a potential fire condition, demonstrating how multiple sensor inputs can be combined to determine system responses.
-
-
-
----------------------------------------------------------------------
-
-Team Members
-
----------------------------------------------------------------------
-
-Team Leader: Serrona, John Mark 
-
-Members:
-
-Atas, Mikkos Cepie (Score: 99)
-
-Gito, Rhic Emmanuel (Score: 100)
-
----------------------------------------------------------------------
+***
