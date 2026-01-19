@@ -90,5 +90,3 @@ This demonstrates a dependable **real-time linkage** between physical user input
   - Villamor, Lester John  
 
 ***
-
-Would you like me to include a **“VIII. Program Code and Explanation”** section next — showing both the Arduino sketch and the Python client structure (with sample FastAPI endpoint calls and serial handling)?
