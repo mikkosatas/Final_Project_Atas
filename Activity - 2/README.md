@@ -1,67 +1,54 @@
-Laboratory Activity #2 – Working with Analog Signals
+**Laboratory Activity #2 – Working with Analog Signals**  
 
+***
 
-Description
+### I. Description  
+This laboratory activity introduces the concept of **analog signals** and their implementation in an **Arduino-based circuit**. It extends the digital running light experiment from *Laboratory Activity #1* by adding **analog output control** to vary LED brightness. The experiment demonstrates how analog values represent signal intensities and how these can be used to control hardware components such as LEDs, providing insight into **analog-to-digital interfacing** within IoT systems.
 
----------------------------------------------------------------------
+***
 
-* This laboratory activity introduces the concept of analog signals and their use in an Arduino-based circuit.
-It extends the digital running light pattern from Laboratory Activity #1 by adding analog output control to adjust LED brightness levels.
-The activity illustrates how analog values can represent varying signal intensities and how these values are applied to control hardware components such as LEDs.
+### II. Objectives  
+1. Discuss analog signals and their implementation in Arduino circuits.  
+2. Understand analog-to-digital signal conversion and scaling concepts.  
 
----------------------------------------------------------------------
+***
 
+### III. Concepts Applied  
+- Analog signal representation  
+- **Pulse Width Modulation (PWM)** using `analogWrite()`  
+- Use of arrays for efficient pin management  
+- Iterative control through `while()` loops  
+- Sequential logic execution  
+- Timing control using `delay()` functions  
 
-Objectives
+***
 
----------------------------------------------------------------------
+### IV. System Behavior  
+- **Pins used:** Digital Pins 8–12  
+- **Control method:** LED pin numbers stored in an array for structured looping.  
+- **Sequence operation:**  
+  1. The program gradually **increases** LED brightness from **Pin 12 → Pin 8**, reaching maximum analog value.  
+  2. Once all LEDs are fully lit, it gradually **decreases** brightness from **Pin 12 → Pin 8** back to zero.  
+- **Visual effect:**  
+  The LEDs create a flowing light pattern with varying brightness, illustrating how analog output modifies signal intensity.  
+- **Control logic:**  
+  Arrays and iterative loops simplify management and sequencing of multiple LEDs for a smooth brightness transition.  
 
-* Discuss analog signals and their implementation in an Arduino circuit
+***
 
-* Understand analog-to-digital signal conversion and scaling concepts
----------------------------------------------------------------------
+### V. Circuit Diagram and Wiring  
+- **Arduino Uno** connected to five LEDs on **digital pins 8–12**.  
+- **Array structure:** `int ledPins[5] = {8, 9, 10, 11, 12};`  
+- **Connection setup:**  
+  Each LED is connected in series with a **220Ω resistor** leading to **GND**.  
+- The PWM effect controls LED brightness through `analogWrite()` rather than simple ON/OFF logic.  
 
-Concepts Applied
+***
 
----------------------------------------------------------------------
+### VI. Team Members  
+- **Team Leader:** Gito, Rhic Emmanuel  
+- **Members:**  
+  - Atas, Mikkos Cepie — *Score: 99*  
+  - Serrona, John Mark — *Score: 100*  
 
-* Analog signal representation
-
-* Pulse Width Modulation (PWM) using analogWrite()
-
-* Use of arrays for pin management
-
-* Iterative control using while() loops
-
-* Sequential logic execution
-
-* Timing control using delays
-  
----------------------------------------------------------------------
-
-System Behavior
-
----------------------------------------------------------------------
-* Five LEDs are connected to Arduino digital pins 8 to 12, with their pin numbers stored in an array for organized control.
-
-* The program sequentially increases LED brightness from pin 12 down to pin 8 by setting each LED to the maximum analog value.
-
-* After all LEDs are fully lit, the program sequentially decreases their brightness back to zero from pin 12 down to pin 8.
-
-* The repeating sequence visually demonstrates how different analog output values change LED intensity and how arrays with loops simplify multi-LED control.
-
----------------------------------------------------------------------
-
-Team Members
-
----------------------------------------------------------------------
-
-Team Leader: Gito, Rhic Emmanuel
-
-Members:
-
-Atas, Mikkos Cepie (Score: 99)
-
-Serrona, John Mark (Score: 100)
-
----------------------------------------------------------------------
+***
