@@ -1,105 +1,103 @@
-Midterm Laboratory Exam
+**Midterm Laboratory Exam – Smart Lighting System Using Arduino**  
 
 
-Description
+***
 
----------------------------------------------------------------------
+### I. Description  
+This laboratory activity demonstrates how to build a **smart lighting system using Arduino** that reacts to ambient light conditions. The system employs a **photoresistor** to sense light intensity and uses **three LEDs** to indicate low, medium, and high light levels. It supports both **manual** and **automatic modes**, allowing simulation of various environmental conditions such as cloudy, normal, or bright sunlight. This experiment enables students to practice **sensor data processing**, **threshold-based control**, and **Serial interaction** for dynamic system tuning and monitoring.  
 
-* This laboratory activity demonstrates how to build a smart lighting system using Arduino that reacts to ambient light conditions,
-  the system uses a photoresistor to sense light intensity and three LEDs to indicate low, medium, and high light levels. It should supports manual and automatic modes so the system can simulate environmental conditions such as cloudy, normal, or bright sunlight while students practice processing sensor data, threshold logic, and Serial interaction.
+***
 
+### II. Objectives  
+1. Learn to read analog sensor data using a photoresistor.  
+2. Implement LED indicators for low, medium, and high light levels.  
+3. Switch between manual and automatic operation modes.  
+4. Adjust light thresholds dynamically or manually based on user input.  
+5. Display system status and readings on the Serial Monitor.  
 
----------------------------------------------------------------------
+***
 
+### III. Concepts Applied  
+- Analog input handling using `analogRead()`.  
+- Mapping sensor values to percentages via the `map()` function.  
+- Threshold-based logic for activating LEDs at specific light levels.  
+- Serial communication for receiving user commands and providing feedback.  
+- String parsing using `startsWith()` and `substring()` for command processing.  
+- Automatic mode operation using dynamic thresholds that emulate environmental lighting.  
+- Modular and well-structured function design for maintainable code and readability.  
 
-Objectives
+***
 
----------------------------------------------------------------------
+### IV. System Behavior  
 
-*  Learn to read analog sensor data using a photoresistor
-* Implement LED indicators for low, medium, and high light levels
-* Switch between manual and automatic operation modes
-* Adjust thresholds dynamically or manually based on user input
-* Display system status on the Serial Monitor
+#### A. System Overview  
+- **Primary Components:**  
+  - *Photoresistor (LDR)* → Connected to **Analog Pin A0** to measure ambient light intensity.  
+  - *Green LED* → Indicates low light levels.  
+  - *Yellow LED* → Indicates moderate light conditions.  
+  - *Red LED* → Indicates high light brightness.  
 
----------------------------------------------------------------------
+- The system continuously monitors real-time light intensity and updates LED states accordingly, providing **visual feedback** of lighting conditions.  
 
-Concepts Applied
+***
 
----------------------------------------------------------------------
+#### B. Modes of Operation  
 
-* Analog input handling using analogRead().
-​
+- **Manual Mode:**  
+  - The user sets custom **low** and **high** light thresholds using Serial Monitor commands.  
+  - Allows direct control of when each LED turns ON based on manually defined thresholds.  
 
-* Mapping sensor values to percentages using the map() function.
-​
+- **Automatic Mode:**  
+  - The system automatically adjusts thresholds based on preset environmental profiles:  
 
-* Threshold-based decision logic to activate LEDs.
-​
+  | Environment | Low Threshold | High Threshold |
+  |:-------------|:--------------|:---------------|
+  | Cloudy | 0% | 40% |
+  | Normal | 41% | 70% |
+  | Bright Sunlight | 71% | 100% |
 
-* Serial communication for user commands and feedback.
-​
+***
 
-* String parsing with startsWith() and substring() for command processing.
-​
+#### C. Serial Monitor Commands  
 
-* Automatic mode with dynamic thresholds that emulate different lighting environments.
-​
+| Command | Description |
+|:---------|:-------------|
+| `MODE AUTO` | Switch system to **automatic mode** |
+| `MODE MANUAL` | Switch system to **manual mode** |
+| `SET LOW xx` | Set low threshold (in %) when in manual mode |
+| `SET HIGH xx` | Set high threshold (in %) when in manual mode |
+| *Invalid commands* | Responds with: **Error: Wrong command** |
 
-* Modular function design for clearer and more maintainable code.  
-  
----------------------------------------------------------------------
+***
 
-System Behavior
+#### D. Runtime Behavior  
+- The system outputs every **1 second** to the Serial Monitor:  
+  - Current **light intensity (%)**  
+  - Current **mode (Manual/Automatic)**  
+  - Currently **active LED (Green/Yellow/Red)**  
+  - In automatic mode: the **interpreted environment** (*Cloudy*, *Normal*, *Bright*)  
 
----------------------------------------------------------------------
-* System Overview
-      * Components
-      * photoresistor to analog pin A0 - measures ambient light intensity and serves as the system’s main input sensor.
-      * green LED indicates low light levels, a yellow LED indicates medium light levels, and a red LED indicates high light levels, providing clear visual feedback of the detected brightness.
+This setup demonstrates how analog data can be processed into real-time, adaptive lighting feedback through both user control and automated response.  
 
-* Modes of Operation
+***
 
-      * Manual Mode: The user sets the low and high light thresholds through Serial commands, allowing direct control over when each LED should activate.
+### V. Circuit Diagram and Wiring  
+- **Arduino Uno connections:**  
+  - Photoresistor (LDR) → **Analog Pin A0** (voltage divider configuration)  
+  - Green LED → **Digital Pin 8**  
+  - Yellow LED → **Digital Pin 9**  
+  - Red LED → **Digital Pin 10**  
+  - Each LED connected through a **220Ω resistor** → GND  
+- **Power Supply:** USB connection (5V)  
+- **Serial Interface:** Used for command input and feedback display through the **Arduino IDE Serial Monitor**  
 
-      * Automatic Mode: The system automatically adjusts thresholds based on the interpreted environment:
+***
 
-      * Cloudy → LOW = 0%, HIGH = 40%
+### VI. Team Members  
+- **Team Leader:** Lhojen Faith Bonganay  
+- **Members:**  
+  - Mikkos Cepie D. Atas      
+  - Gabrielle Delacerna  
+  - Lester John Villamor 
 
-      * Normal → LOW = 41%, HIGH = 70%
-
-      * Bright Sunlight → LOW = 71%, HIGH = 100%
-
-Serial Monitor Commands
-
-* MODE AUTO – switches the system to automatic mode.
-* MODE MANUAL – switches the system to manual mode.
-* SET LOW xx – sets the low threshold (percentage) in manual mode.
-* SET HIGH xx – sets the high threshold (percentage) in manual mode.
-* Any unrecognized command responds with: Error: Wrong command.
-
-Runtime Behavior
-
-* Every second, the system outputs to the Serial Monitor: the current light intensity (in %), the active mode (Manual or Automatic), the currently active LED (Green/Yellow/Red), and, in automatic mode, the interpreted environment condition (Cloudy/Normal/Bright
-
-
----------------------------------------------------------------------
-
-Team Members
-
----------------------------------------------------------------------
-
-Team Leader: Gerard Obey S. Francisco
-
-Members:
-
-Merell Joy B. Barrion
-
-Jose Angelo B. Bitanga
-
-Maureen T. Roldan
-
-John Mark L. Serrona
-
----------------------------------------------------------------------
-
+***
